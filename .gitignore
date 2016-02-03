@@ -1,2 +1,4 @@
 node_modules/
 .sass-cache/
+src/sass/snackbar.css
+src/sass/snackbar.css.map

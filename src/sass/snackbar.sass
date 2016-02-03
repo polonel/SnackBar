@@ -1,12 +1,11 @@
-.paper-snackbar
-  transition-property: opacity, bottom, left, right, width, margin, border-radius
-  transition-duration: 0.5s
-  transition-timing-function: ease
+.snackbar-container
+  transition: all 500ms ease
+  transition-property: top, right, bottom, left, opacity
   font-family: Roboto, sans-serif
   font-size: 14px
   min-height: 14px
   background-color: darken(#223140, 15%)
-  position: absolute
+  position: fixed
   display: block
   justify-content: space-between
   align-items: center
@@ -14,6 +13,7 @@
   line-height: 22px
   padding: 18px 24px
   bottom: 0
+  top: 0
   opacity: 0
   z-index: 9999
   .action
@@ -29,16 +29,7 @@
     cursor: pointer
 
 @media (min-width: 640px)
-  .paper-snackbar
-    /*
-     *Desktop:
-     *  Single-line snackbar height: 48 dp tall
-     *  Minimum width: 288 dp
-     *  Maximum width: 568 dp
-     *  2 dp rounded corner
-     *  Text: Roboto Regular 14 sp
-     *  Action button: Roboto Medium 14 sp, all-caps text
-     *  Default background fill: #323232 100%
+  .snackbar-container
     min-width: 288px
     max-width: 568px
     display: inline-flex
@@ -47,13 +38,35 @@
     bottom: -100px
 
 @media (max-width: 640px)
-  .paper-snackbar
-    /*
-     * Mobile:
-     *   Single-line snackbar height: 48 dp
-     *   Multi-line snackbar height: 80 dp
-     *   Text: Roboto Regular 14 sp
-     *   Action button: Roboto Medium 14 sp, all-caps text
-     *   Default background fill: #323232 100%
+  .snackbar-container
     left: 0
     right: 0
+    
+.snackbar-pos
+  &.bottom-center
+    top: auto !important
+    bottom: 0
+    left: 50%
+    transform: translate(-50%, -50%)
+  &.bottom-left
+    top: auto !important
+    bottom: 0
+    left: 0
+  &.bottom-right
+    top: auto !important
+    bottom: 0
+    right: 0
+  &.top-left
+    bottom: auto !important
+    top: 0
+    left: 0
+  &.top-center
+    bottom: auto !important
+    top: 0
+    left: 50%
+    transform: translate(-50%, -50%)
+  &.top-right
+    bottom: auto !important
+    top: 0
+    right: 0
+  

@@ -31,12 +31,19 @@
   var SnackBar = SnackBar || {};
   SnackBar.current = null;
   var $defaults = {
-    text: 'Default',
+
+    text: 'Default Text',
     textColor: '#ffffff',
+
+    width: '288px',
+
     showActionButton: true,
     actionText: 'Dismiss',
     actionTextColor: '#4caf50',
-    backgroundColor: '#070B0E',
+
+    backgroundColor: '#323232',
+
+    pos: 'bottom-left',
 
     duration: 5000,
 
@@ -58,7 +65,8 @@
     }
 
     SnackBar.snackbar = document.createElement('div');
-    SnackBar.snackbar.className = 'paper-snackbar';
+    SnackBar.snackbar.className = 'snackbar-container';
+    SnackBar.snackbar.style.width = options.width;
     SnackBar.snackbar.appendChild(document.createTextNode(options.text));
     SnackBar.snackbar.style.background = options.backgroundColor;
     SnackBar.snackbar.style.color = options.textColor;
@@ -91,10 +99,18 @@
 
     SnackBar.current = SnackBar.snackbar;
     document.body.style.overflow = 'hidden';
+
+    if (options.pos === 'top-left' || options.pos === 'top-center' || options.pos === 'top-right')
+      SnackBar.snackbar.style.top = '-100px';
+
     document.body.appendChild(SnackBar.snackbar);
     var $bottom = getComputedStyle(SnackBar.snackbar).bottom;
-    SnackBar.snackbar.style.bottom = '0';
+    var $top = getComputedStyle(SnackBar.snackbar).top;
     SnackBar.snackbar.style.opacity = 1;
+    SnackBar.snackbar.className = 'snackbar-container snackbar-pos ' + options.pos;
+    if (options.pos === 'top-left' || options.pos === 'top-center' || options.pos === 'top-right')
+      SnackBar.snackbar.style.top = 0;
+
     setTimeout(function () {
       document.body.style.overflow = 'auto';
     }, 500);
