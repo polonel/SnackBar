@@ -13,7 +13,7 @@ bower install snackbar
 or maybe you wish to you use NPM...
 
 ```bash
-npm install snackbar
+npm install node-snackbar
 ```
 and if that doesn't float you, you can always download the CSS and JS files...
 ```html
