@@ -47,6 +47,8 @@
 
     duration: 5000,
 
+    customClass: '',
+
     onActionClick: function (element) {
       element.style.opacity = 0;
     }
@@ -65,18 +67,25 @@
     }
 
     SnackBar.snackbar = document.createElement('div');
-    SnackBar.snackbar.className = 'snackbar-container';
+    SnackBar.snackbar.className = 'snackbar-container ' + options.customClass;
     SnackBar.snackbar.style.width = options.width;
-    SnackBar.snackbar.appendChild(document.createTextNode(options.text));
+    var $p = document.createElement('p');
+    $p.style.margin = 0;
+    $p.style.padding = 0;
+    $p.style.color = options.textColor;
+    $p.style.fontSize = '14px';
+    $p.style.fontWeight = 300;
+    $p.style.lineHeight = '1em';
+    $p.innerHTML = options.text;
+    SnackBar.snackbar.appendChild($p);
     SnackBar.snackbar.style.background = options.backgroundColor;
-    SnackBar.snackbar.style.color = options.textColor;
     if (options.showActionButton) {
       var actionButton = document.createElement('button');
       actionButton.className = 'action';
       actionButton.innerHTML = options.actionText;
       actionButton.style.color = options.actionTextColor;
       actionButton.addEventListener('click', function () {
-        SnackBar.snackbar.style.opacity = 0;
+        options.onActionClick(SnackBar.snackbar);
       });
       SnackBar.snackbar.appendChild(actionButton);
     }
@@ -107,13 +116,22 @@
     var $bottom = getComputedStyle(SnackBar.snackbar).bottom;
     var $top = getComputedStyle(SnackBar.snackbar).top;
     SnackBar.snackbar.style.opacity = 1;
-    SnackBar.snackbar.className = 'snackbar-container snackbar-pos ' + options.pos;
-    if (options.pos === 'top-left' || options.pos === 'top-center' || options.pos === 'top-right')
+    SnackBar.snackbar.className = 'snackbar-container ' + options.customClass + ' snackbar-pos ' + options.pos;
+    if (options.pos === 'top-left' || options.pos === 'top-right')
       SnackBar.snackbar.style.top = 0;
+    else if (options.pos === 'top-center')
+      SnackBar.snackbar.style.top = '25px';
+    else if (options.pos === 'bottom-center')
+      SnackBar.snackbar.style.bottom = '-25px';
 
     setTimeout(function () {
       document.body.style.overflow = 'auto';
     }, 500);
+  };
+
+  SnackBar.close = function () {
+    if (SnackBar.current)
+      SnackBar.current.style.opacity = 0;
   };
 
   // Pure JS Extend
