@@ -134,6 +134,7 @@
       SnackBar.current.style.opacity = 0;
   };
 
+
   // Pure JS Extend
   // http://gomakethings.com/vanilla-javascript-version-of-jquery-extend/
   var Extend = function () {
