@@ -1,5 +1,5 @@
 /*!
- * Snackbar v0.1.1
+ * Snackbar v0.1.2
  * http://polonel.com/Snackbar
  *
  * Copyright 2016 Chris Brame and other contributors
@@ -66,9 +66,9 @@
       }.bind(Snackbar.current), 500);
     }
 
-    Snackbar.Snackbar = document.createElement('div');
-    Snackbar.Snackbar.className = 'Snackbar-container ' + options.customClass;
-    Snackbar.Snackbar.style.width = options.width;
+    Snackbar.snackbar = document.createElement('div');
+    Snackbar.snackbar.className = 'snackbar-container ' + options.customClass;
+    Snackbar.snackbar.style.width = options.width;
     var $p = document.createElement('p');
     $p.style.margin = 0;
     $p.style.padding = 0;
@@ -77,17 +77,17 @@
     $p.style.fontWeight = 300;
     $p.style.lineHeight = '1em';
     $p.innerHTML = options.text;
-    Snackbar.Snackbar.appendChild($p);
-    Snackbar.Snackbar.style.background = options.backgroundColor;
+    Snackbar.snackbar.appendChild($p);
+    Snackbar.snackbar.style.background = options.backgroundColor;
     if (options.showAction) {
       var actionButton = document.createElement('button');
       actionButton.className = 'action';
       actionButton.innerHTML = options.actionText;
       actionButton.style.color = options.actionTextColor;
       actionButton.addEventListener('click', function () {
-        options.onActionClick(Snackbar.Snackbar);
+        options.onActionClick(Snackbar.snackbar);
       });
-      Snackbar.Snackbar.appendChild(actionButton);
+      Snackbar.snackbar.appendChild(actionButton);
     }
 
     setTimeout(function () {
@@ -95,34 +95,34 @@
         Snackbar.current.style.opacity = 0;
       }
 
-    }.bind(Snackbar.Snackbar), $defaults.duration);
+    }.bind(Snackbar.snackbar), $defaults.duration);
 
-    Snackbar.Snackbar.addEventListener('transitionend', function (event, elapsed) {
+    Snackbar.snackbar.addEventListener('transitionend', function (event, elapsed) {
       if (event.propertyName === 'opacity' && this.style.opacity === 0) {
         this.parentElement.removeChild(this);
         if (Snackbar.current === this) {
           Snackbar.current = null;
         }
       }
-    }.bind(Snackbar.Snackbar));
+    }.bind(Snackbar.snackbar));
 
-    Snackbar.current = Snackbar.Snackbar;
+    Snackbar.current = Snackbar.snackbar;
     document.body.style.overflow = 'hidden';
 
-    if (options.pos === 'top-left' || options.pos === 'top-center' || options.pos === 'top-right')
-      Snackbar.Snackbar.style.top = '-100px';
+    if (options.pos === 'top-left' || options.pos === 'top-center' || options.pos === 'top' || options.pos === 'top-right')
+      Snackbar.snackbar.style.top = '-100px';
 
-    document.body.appendChild(Snackbar.Snackbar);
-    var $bottom = getComputedStyle(Snackbar.Snackbar).bottom;
-    var $top = getComputedStyle(Snackbar.Snackbar).top;
-    Snackbar.Snackbar.style.opacity = 1;
-    Snackbar.Snackbar.className = 'Snackbar-container ' + options.customClass + ' Snackbar-pos ' + options.pos;
+    document.body.appendChild(Snackbar.snackbar);
+    var $bottom = getComputedStyle(Snackbar.snackbar).bottom;
+    var $top = getComputedStyle(Snackbar.snackbar).top;
+    Snackbar.snackbar.style.opacity = 1;
+    Snackbar.snackbar.className = 'snackbar-container ' + options.customClass + ' snackbar-pos ' + options.pos;
     if (options.pos === 'top-left' || options.pos === 'top-right')
-      Snackbar.Snackbar.style.top = 0;
+      Snackbar.snackbar.style.top = 0;
     else if (options.pos === 'top-center' || options.pos === 'top')
-      Snackbar.Snackbar.style.top = '25px';
+      Snackbar.snackbar.style.top = '25px';
     else if (options.pos === 'bottom-center' || options.pos === 'bottom')
-      Snackbar.Snackbar.style.bottom = '-25px';
+      Snackbar.snackbar.style.bottom = '-25px';
 
     setTimeout(function () {
       document.body.style.overflow = 'auto';

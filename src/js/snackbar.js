@@ -1,5 +1,5 @@
 /*!
- * Snackbar v0.1.1
+ * Snackbar v0.1.2
  * http://polonel.com/Snackbar
  *
  * Copyright 2016 Chris Brame and other contributors
@@ -37,7 +37,7 @@
 
     width: 'auto',
 
-    showActionButton: true,
+    showAction: true,
     actionText: 'Dismiss',
     actionTextColor: '#4caf50',
 
@@ -79,7 +79,7 @@
     $p.innerHTML = options.text;
     Snackbar.snackbar.appendChild($p);
     Snackbar.snackbar.style.background = options.backgroundColor;
-    if (options.showActionButton) {
+    if (options.showAction) {
       var actionButton = document.createElement('button');
       actionButton.className = 'action';
       actionButton.innerHTML = options.actionText;
