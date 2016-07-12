@@ -1,5 +1,5 @@
 /*!
- * Snackbar v0.1.2
+ * Snackbar v0.1.3
  * http://polonel.com/Snackbar
  *
  * Copyright 2016 Chris Brame and other contributors
@@ -7,28 +7,28 @@
  * https://github.com/polonel/Snackbar/blob/master/LICENSE
  */
 
-(function (window, factory) {
+(function () {
   'use strict';
 
-  if (typeof define === 'function' && define.amd) {
-    define([], function () {
-      return factory.apply(window);
-    });
+  var root = typeof self == 'object' && self.self === self && self ||
+    typeof global == 'object' && global.global === global && global ||
+    this;
+
+  var Snackbar = function (obj) {
+    if (obj instanceof Snackbar) return Snackbar;
+    if (!(this instanceof Snackbar)) return new Snackbar(obj);
+    this._wrapped = obj;
+  };
+
+  if (typeof exports != 'undefined' && !exports.nodeType) {
+    if (typeof module != 'undefined' && !module.nodeType && module.exports) {
+      exports = module.exports = Snackbar;
+    }
+    exports.Snackbar = Snackbar;
+  } else {
+    root.Snackbar = Snackbar;
   }
 
-  // Node.JS
-  else if (typeof exports === 'object') {
-    module.exports = factory.call(window);
-  }
-
-  // Browser
-  else {
-    window.Snackbar = factory.call(window);
-  }
-})(typeof global === 'object' ? global : this, function () {
-  'use strict';
-
-  var Snackbar = Snackbar || {};
   Snackbar.current = null;
   var $defaults = {
 
@@ -95,7 +95,7 @@
         Snackbar.current.style.opacity = 0;
       }
 
-    }.bind(Snackbar.snackbar), $defaults.duration);
+    }.bind(Snackbar.snackbar), $options.duration);
 
     Snackbar.snackbar.addEventListener('transitionend', function (event, elapsed) {
       if (event.propertyName === 'opacity' && this.style.opacity === 0) {
@@ -170,4 +170,4 @@
   };
 
   return Snackbar;
-});
+})();
