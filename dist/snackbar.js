@@ -1,5 +1,5 @@
 /*!
- * Snackbar v0.1.5
+ * Snackbar v0.1.6
  * http://polonel.com/Snackbar
  *
  * Copyright 2016 Chris Brame and other contributors
