@@ -6,7 +6,7 @@
   min-height: 14px;
   background-color: #070b0e;
   position: fixed;
-  display: block;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   color: white;
