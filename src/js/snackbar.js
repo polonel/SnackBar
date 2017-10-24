@@ -7,25 +7,23 @@
  * https://github.com/polonel/Snackbar/blob/master/LICENSE
  */
 
-(function (root, factory) {
+(function(root, factory) {
     'use strict';
 
     if (typeof define === 'function' && define.amd) {
         define([], function() {
-           return (root.Snackbar = factory());
+            return (root.Snackbar = factory());
         });
-    } else if(typeof module === 'object' && module.exports) {
-        module.exports = (root.Snackbar = factory());
+    } else if (typeof module === 'object' && module.exports) {
+        module.exports = root.Snackbar = factory();
     } else {
         root.Snackbar = factory();
     }
-
-}(this, function() {
+})(this, function() {
     var Snackbar = {};
 
     Snackbar.current = null;
     var $defaults = {
-
         text: 'Default Text',
         textColor: '#ffffff',
 
@@ -43,21 +41,25 @@
 
         customClass: '',
 
-        onActionClick: function (element) {
+        onActionClick: function(element) {
             element.style.opacity = 0;
-        }
+        },
     };
 
-    Snackbar.show = function ($options) {
+    Snackbar.show = function($options) {
         var options = Extend(true, $defaults, $options);
 
         if (Snackbar.current) {
             Snackbar.current.style.opacity = 0;
-            setTimeout(function () {
-                var $parent = this.parentElement;
-                if ($parent) // possible null if too many/fast Snackbars
-                    $parent.removeChild(this);
-            }.bind(Snackbar.current), 500);
+            setTimeout(
+                function() {
+                    var $parent = this.parentElement;
+                    if ($parent)
+                        // possible null if too many/fast Snackbars
+                        $parent.removeChild(this);
+                }.bind(Snackbar.current),
+                500
+            );
         }
 
         Snackbar.snackbar = document.createElement('div');
@@ -78,38 +80,51 @@
             actionButton.className = 'action';
             actionButton.innerHTML = options.actionText;
             actionButton.style.color = options.actionTextColor;
-            actionButton.addEventListener('click', function () {
+            actionButton.addEventListener('click', function() {
                 options.onActionClick(Snackbar.snackbar);
             });
             Snackbar.snackbar.appendChild(actionButton);
         }
 
-        setTimeout(function () {
-            if (Snackbar.current === this) {
-                Snackbar.current.style.opacity = 0;
-            }
+        if (options.duration) {
+            setTimeout(
+                function() {
+                    if (Snackbar.current === this) {
+                        Snackbar.current.style.opacity = 0;
+                    }
+                }.bind(Snackbar.snackbar),
+                options.duration
+            );
+        }
 
-        }.bind(Snackbar.snackbar), options.duration);
-
-        Snackbar.snackbar.addEventListener('transitionend', function (event, elapsed) {
-            if (event.propertyName == 'opacity' && this.style.opacity == '0') {
-                this.parentElement.removeChild(this);
-                if (Snackbar.current === this) {
-                    Snackbar.current = null;
+        Snackbar.snackbar.addEventListener(
+            'transitionend',
+            function(event, elapsed) {
+                if (event.propertyName == 'opacity' && this.style.opacity == '0') {
+                    this.parentElement.removeChild(this);
+                    if (Snackbar.current === this) {
+                        Snackbar.current = null;
+                    }
                 }
-            }
-        }.bind(Snackbar.snackbar));
+            }.bind(Snackbar.snackbar)
+        );
 
         Snackbar.current = Snackbar.snackbar;
 
-        if (options.pos === 'top-left' || options.pos === 'top-center' || options.pos === 'top' || options.pos === 'top-right')
+        if (
+            options.pos === 'top-left' ||
+            options.pos === 'top-center' ||
+            options.pos === 'top' ||
+            options.pos === 'top-right'
+        )
             Snackbar.snackbar.style.top = '-100px';
 
         document.body.appendChild(Snackbar.snackbar);
         var $bottom = getComputedStyle(Snackbar.snackbar).bottom;
         var $top = getComputedStyle(Snackbar.snackbar).top;
         Snackbar.snackbar.style.opacity = 1;
-        Snackbar.snackbar.className = 'snackbar-container ' + options.customClass + ' snackbar-pos ' + options.pos;
+        Snackbar.snackbar.className =
+            'snackbar-container ' + options.customClass + ' snackbar-pos ' + options.pos;
         if (options.pos === 'top-left' || options.pos === 'top-right')
             Snackbar.snackbar.style.top = 0;
         else if (options.pos === 'top-center' || options.pos === 'top')
@@ -118,15 +133,13 @@
             Snackbar.snackbar.style.bottom = '-25px';
     };
 
-    Snackbar.close = function () {
-        if (Snackbar.current)
-            Snackbar.current.style.opacity = 0;
+    Snackbar.close = function() {
+        if (Snackbar.current) Snackbar.current.style.opacity = 0;
     };
 
     // Pure JS Extend
     // http://gomakethings.com/vanilla-javascript-version-of-jquery-extend/
-    var Extend = function () {
-
+    var Extend = function() {
         var extended = {};
         var deep = false;
         var i = 0;
@@ -137,7 +150,7 @@
             i++;
         }
 
-        var merge = function (obj) {
+        var merge = function(obj) {
             for (var prop in obj) {
                 if (Object.prototype.hasOwnProperty.call(obj, prop)) {
                     if (deep && Object.prototype.toString.call(obj[prop]) === '[object Object]') {
@@ -155,8 +168,7 @@
         }
 
         return extended;
-
     };
 
     return Snackbar;
-}));
+});
