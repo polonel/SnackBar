@@ -1,8 +1,8 @@
 /*!
- * Snackbar v0.1.7
+ * Snackbar v0.1.8
  * http://polonel.com/Snackbar
  *
- * Copyright 2016 Chris Brame and other contributors
+ * Copyright 2017 Chris Brame and other contributors
  * Released under the MIT license
  * https://github.com/polonel/Snackbar/blob/master/LICENSE
  */
@@ -25,25 +25,24 @@
     Snackbar.current = null;
     var $defaults = {
         text: 'Default Text',
-        textColor: '#ffffff',
-
+        textColor: '#FFFFFF',
         width: 'auto',
-
         showAction: true,
         actionText: 'Dismiss',
-        actionTextColor: '#4caf50',
-
+        actionTextColor: '#4CAF50',
+        showSecondButton: false,
+        secondButtonText: '',
+        secondButtonTextColor: '#4CAF50',
         backgroundColor: '#323232',
-
         pos: 'bottom-left',
-
         duration: 5000,
-
         customClass: '',
-
         onActionClick: function(element) {
             element.style.opacity = 0;
         },
+        onSecondButtonClick: function(element) {
+
+        }
     };
 
     Snackbar.show = function($options) {
@@ -55,7 +54,7 @@
                 function() {
                     var $parent = this.parentElement;
                     if ($parent)
-                        // possible null if too many/fast Snackbars
+                    // possible null if too many/fast Snackbars
                         $parent.removeChild(this);
                 }.bind(Snackbar.current),
                 500
@@ -75,6 +74,16 @@
         $p.innerHTML = options.text;
         Snackbar.snackbar.appendChild($p);
         Snackbar.snackbar.style.background = options.backgroundColor;
+        if (options.showSecondButton) {
+            var secondButton = document.createElement('button');
+            secondButton.className = 'action';
+            secondButton.innerHTML = options.secondButtonText;
+            secondButton.style.color = options.secondButtonTextColor;
+            secondButton.addEventListener('click', function() {
+                options.onSecondButtonClick(Snackbar.snackbar);
+            });
+            Snackbar.snackbar.appendChild(secondButton);
+        }
         if (options.showAction) {
             var actionButton = document.createElement('button');
             actionButton.className = 'action';
@@ -100,7 +109,7 @@
         Snackbar.snackbar.addEventListener(
             'transitionend',
             function(event, elapsed) {
-                if (event.propertyName == 'opacity' && this.style.opacity == '0') {
+                if (event.propertyName === 'opacity' && this.style.opacity === '0') {
                     this.parentElement.removeChild(this);
                     if (Snackbar.current === this) {
                         Snackbar.current = null;
