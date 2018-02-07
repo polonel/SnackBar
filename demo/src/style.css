@@ -1,0 +1,223 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
+.btn, .btn:hover, .btn:active, .btn:focus {
+  background: #f66496;
+}
+
+body {
+  background: #F6F2F5;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.tabs li.tab a {
+  color: #f66496;
+}
+
+.tabs li.tab a:hover {
+  color: #f994b7;
+}
+
+p {
+  font-weight: 300;
+  font-size: 1.1em;
+  line-height: 2.1em;
+  color: #7b5571;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 20px;
+  color: #ad89a4;
+  line-height: 25px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+}
+
+h3, h4 {
+  font-family: "Roboto Condensed", "Roboto", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ccb6c7;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 25px;
+  position: relative;
+}
+
+h4 {
+  font-size: 22px;
+  margin: 15px 0 25px 0;
+}
+
+h5 {
+  text-align: left;
+  font-size: 16px;
+  color: #b798af;
+  font-weight: 400;
+}
+
+hr {
+  display: block;
+  border: none;
+  width: 65%;
+  height: 5px;
+  background: #e1d4de;
+  margin: 25px auto;
+  border-radius: 5px;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.logo {
+  margin-bottom: 30px;
+}
+
+.intro {
+  margin-top: 65px;
+}
+
+.tabs .indicator {
+  background-color: #f66496;
+}
+
+.download, .download:active, .download:focus {
+  position: fixed;
+  top: 25px;
+  right: 55px;
+  background: #fff;
+  border-radius: 3px;
+  color: #323232;
+}
+
+.download:hover, .download:active:hover, .download:focus:hover {
+  color: white;
+  background: #f66496;
+  cursor: pointer;
+}
+
+.btn-full {
+  width: 100%;
+  padding: 10px 0;
+  height: auto;
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 5px;
+}
+
+.img-responsive {
+  max-width: 100%;
+}
+
+.footer a {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.footer a svg {
+  transition: fill 500ms ease;
+  fill: #c2a7bb;
+}
+
+.footer a:hover svg {
+  fill: #7b5571;
+}
+
+pre, code {
+  white-space: normal !important;
+}
+
+pre.sPre {
+  background-color: #1d1f21;
+  color: #f8f8f2;
+  padding: 10px;
+  border-radius: 3px;
+  text-align: left;
+  font-size: 14px;
+  max-width: 700px;
+  white-space: normal;
+}
+
+table {
+  text-align: left;
+  border-collapse: collapse;
+}
+
+table td {
+  padding: 10px 25px;
+  vertical-align: top;
+  color: #936687;
+}
+
+table td:first-child {
+  padding-left: 0;
+}
+
+table td:last-child {
+  padding-right: 0;
+}
+
+@media (max-width: 992px) {
+  table td {
+    padding: 10px 25px !important;
+  }
+}
+
+thead {
+  background: #e1d4de;
+  border: none;
+}
+
+@media (max-width: 992px) {
+  thead {
+    background: #F6F2F5;
+  }
+}
+
+thead tr th {
+  position: relative;
+  text-align: center;
+  padding: 8px;
+  font-weight: normal;
+  color: #986a8d;
+}
+
+@media (max-width: 992px) {
+  thead tr th {
+    text-align: left;
+  }
+}
+
+thead tr th .b-left,
+thead tr th .b-right {
+  position: absolute;
+  background-color: #e1d4de;
+  border-radius: 50%;
+  top: 0;
+  left: -19px;
+  width: 38px;
+  height: 38px;
+}
+
+thead tr th .b-right {
+  left: auto;
+  right: -19px;
+}
+
+/*# sourceMappingURL=style.css.map */

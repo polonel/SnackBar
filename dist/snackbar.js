@@ -1,5 +1,5 @@
 /*!
- * Snackbar v0.1.8
+ * Snackbar v0.1.9
  * http://polonel.com/Snackbar
  *
  * Copyright 2017 Chris Brame and other contributors
@@ -40,9 +40,7 @@
         onActionClick: function(element) {
             element.style.opacity = 0;
         },
-        onSecondButtonClick: function(element) {
-
-        }
+        onSecondButtonClick: function(element) {}
     };
 
     Snackbar.show = function($options) {
@@ -74,6 +72,7 @@
         $p.innerHTML = options.text;
         Snackbar.snackbar.appendChild($p);
         Snackbar.snackbar.style.background = options.backgroundColor;
+
         if (options.showSecondButton) {
             var secondButton = document.createElement('button');
             secondButton.className = 'action';
@@ -84,6 +83,7 @@
             });
             Snackbar.snackbar.appendChild(secondButton);
         }
+
         if (options.showAction) {
             var actionButton = document.createElement('button');
             actionButton.className = 'action';
@@ -100,6 +100,9 @@
                 function() {
                     if (Snackbar.current === this) {
                         Snackbar.current.style.opacity = 0;
+                        // When natural remove event ocurs let's move the snackbar to its origins
+                        Snackbar.current.style.top = '-100px';
+                        Snackbar.current.style.bottom = '-100px';
                     }
                 }.bind(Snackbar.snackbar),
                 options.duration
@@ -120,30 +123,18 @@
 
         Snackbar.current = Snackbar.snackbar;
 
-        if (
-            options.pos === 'top-left' ||
-            options.pos === 'top-center' ||
-            options.pos === 'top' ||
-            options.pos === 'top-right'
-        )
-            Snackbar.snackbar.style.top = '-100px';
-
         document.body.appendChild(Snackbar.snackbar);
         var $bottom = getComputedStyle(Snackbar.snackbar).bottom;
         var $top = getComputedStyle(Snackbar.snackbar).top;
         Snackbar.snackbar.style.opacity = 1;
         Snackbar.snackbar.className =
             'snackbar-container ' + options.customClass + ' snackbar-pos ' + options.pos;
-        if (options.pos === 'top-left' || options.pos === 'top-right')
-            Snackbar.snackbar.style.top = 0;
-        else if (options.pos === 'top-center' || options.pos === 'top')
-            Snackbar.snackbar.style.top = '25px';
-        else if (options.pos === 'bottom-center' || options.pos === 'bottom')
-            Snackbar.snackbar.style.bottom = '-25px';
     };
 
     Snackbar.close = function() {
-        if (Snackbar.current) Snackbar.current.style.opacity = 0;
+        if (Snackbar.current) {
+            Snackbar.current.style.opacity = 0;
+        }
     };
 
     // Pure JS Extend
