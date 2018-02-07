@@ -46,20 +46,6 @@
 
     $('.button-collapse').sideNav();
     $('.scrollspy').scrollSpy();
-
-    $('html').niceScroll({
-      cursorcolor: '#323232',
-      cursorwidth: '5px',
-      zindex: 9999,
-      cursorborder: '#323232'
-    });
-
-    $('tbody').niceScroll({
-      cursorcolor: '#e1d4de',
-      cursorwidth: '5px',
-      zindex: 9999,
-      cursorborder: '#e1d4de'
-    });
   }); // end of document ready
 
 })(jQuery); // end of jQuery name space

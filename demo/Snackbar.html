@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<!-- saved from url=(0033)https://www.polonel.com/snackbar/ -->
-<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" style="overflow: hidden;"><script async="" src="https://www.google-analytics.com/analytics.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
   <title>Snackbar</title>
 
@@ -13,21 +15,26 @@
   <link rel="stylesheet" href="./src/snackbar.min.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="./src/prism.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="./src/style.css" media="screen" title="no title" charset="utf-8">
-<style></style></head>
+
+</head>
 
 <body>
   <div class="container center">
     <div class="row intro">
-      <div class="col s12 logo"><img src="./src/logo_large.png" class="img-responsive" alt="Snackbar Logo"></div>
+      <div class="col s12 logo">
+        <img src="./src/logo_large.png" class="img-responsive" alt="Snackbar Logo">
+      </div>
       <div class="col s12">
-        <h2>Notifications inspired by Google Material Design</h2></div>
+        <h2>Notifications inspired by Google Material Design</h2>
+      </div>
       <div class="col s12">
         <hr>
       </div>
       <a href="https://github.com/polonel/snackbar/archive/master.zip" class="waves-effect waves-light btn btn-large download hide-on-small-only">Download</a>
       <div class="col s12">
         <h3>Lets see what it does...</h3>
-        <p>Here are basic examples of <strong>Snackbar</strong> in action. </p>
+        <p>Here are basic examples of
+          <strong>Snackbar</strong> in action. </p>
         <div class="col s12">
           <button class="waves-effect waves-light btn snackbar" data-pos="top-left">Top Left</button>
           <button class="waves-effect waves-light btn snackbar" data-pos="top-center">Top Center</button>
@@ -41,9 +48,9 @@
           <div class="row">
             <div class="col s12 m8 offset-m2">
               <pre class=" language-javascript">                  <code class=" language-javascript">
-                    Snackbar<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">{</span>pos<span class="token punctuation">:</span> <span class="token string">'bottom-left'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//Set the position</span>
-                  </code>
-                </pre>
+                  Snackbar<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">{</span>pos<span class="token punctuation">:</span> <span class="token string">'bottom-left'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//Set the position</span>
+                </code>
+              </pre>
             </div>
           </div>
 
@@ -58,43 +65,52 @@
           <br>
           <div class="text-left col s10 offset-s1 hide-on-small-only" style="margin-bottom: 35px;">
             <ul class="tabs" style="width: 100%;">
-              <li class="tab col s3" style="width: 25%;"><a href="https://www.polonel.com/snackbar/#code_no_action" class="active">No Action</a></li>
-              <li class="tab col s3" style="width: 25%;"><a href="https://www.polonel.com/snackbar/#code_action_text">Action Text</a></li>
-              <li class="tab col s3" style="width: 25%;"><a href="https://www.polonel.com/snackbar/#code_text_color">Text Color</a></li>
-              <li class="tab col s3" style="width: 25%;"><a href="https://www.polonel.com/snackbar/#code_click_callback">Click Callback</a></li>
-            <div class="indicator" style="right: 571px; left: 0px;"></div></ul>
+              <li class="tab col s3" style="width: 25%;">
+                <a href="https://www.polonel.com/snackbar/#code_no_action" class="active">No Action</a>
+              </li>
+              <li class="tab col s3" style="width: 25%;">
+                <a href="https://www.polonel.com/snackbar/#code_action_text">Action Text</a>
+              </li>
+              <li class="tab col s3" style="width: 25%;">
+                <a href="https://www.polonel.com/snackbar/#code_text_color">Text Color</a>
+              </li>
+              <li class="tab col s3" style="width: 25%;">
+                <a href="https://www.polonel.com/snackbar/#code_click_callback">Click Callback</a>
+              </li>
+              <div class="indicator" style="right: 571px; left: 0px;"></div>
+            </ul>
             <div id="code_no_action">
               <pre class=" language-javascript"><code class=" language-javascript">
                   Snackbar<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
                     showAction<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-                  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                </code></pre>
+                    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                  </code></pre>
             </div>
             <div id="code_action_text" style="display: none;">
               <pre class=" language-javascript"><code class=" language-javascript">
-                  Snackbar<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-                    actionText<span class="token punctuation">:</span> <span class="token string">'Thanks!'</span><span class="token punctuation">,</span>
-                  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                </code></pre>
+                    Snackbar<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                      actionText<span class="token punctuation">:</span> <span class="token string">'Thanks!'</span><span class="token punctuation">,</span>
+                      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    </code></pre>
             </div>
             <div id="code_text_color" style="display: none;">
               <pre class=" language-javascript"><code class=" language-javascript">
-                  Snackbar<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-                    actionTextColor<span class="token punctuation">:</span> <span class="token string">'#ff0000'</span><span class="token punctuation">,</span>
-                  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                </code></pre>
+                      Snackbar<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                        actionTextColor<span class="token punctuation">:</span> <span class="token string">'#ff0000'</span><span class="token punctuation">,</span>
+                        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                      </code></pre>
             </div>
             <div id="code_click_callback" style="display: none;">
               <pre class=" language-javascript">                  <code style="white-space: pre-line !important;" class=" language-javascript">Snackbar<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-                     text<span class="token punctuation">:</span> <span class="token string">'I have a custom callback when action button is clicked.'</span><span class="token punctuation">,</span>
-                     width<span class="token punctuation">:</span> <span class="token string">'475px'</span><span class="token punctuation">,</span>
-                     onActionClick<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                         <span class="token comment" spellcheck="true">//Set opacity of element to 0 to close Snackbar </span>
-                      <span class="token function">   $</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">'opacity'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                      <span class="token function">   alert</span><span class="token punctuation">(</span><span class="token string">'Clicked Called!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                     <span class="token punctuation">}</span>
-                  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                </code></pre>
+                           text<span class="token punctuation">:</span> <span class="token string">'I have a custom callback when action button is clicked.'</span><span class="token punctuation">,</span>
+                           width<span class="token punctuation">:</span> <span class="token string">'475px'</span><span class="token punctuation">,</span>
+                           onActionClick<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                 <span class="token comment" spellcheck="true">//Set opacity of element to 0 to close Snackbar </span>
+                              <span class="token function">   $</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">'opacity'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                              <span class="token function">   alert</span><span class="token punctuation">(</span><span class="token string">'Clicked Called!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                             <span class="token punctuation">}</span>
+                          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        </code></pre>
             </div>
           </div>
 
@@ -108,18 +124,23 @@
             <div class="col s12 m10 offset-m1">
               <h4>Download &amp; Install</h4>
               <div style="margin-bottom: 35px;">
-                <h5><strong>Option 1 - </strong> Bower install:</h5>
+                <h5>
+                  <strong>Option 1 - </strong> Bower install:</h5>
                 <pre class="sPre">                    $ bower install snackbar
-                  </pre>
+                          </pre>
               </div>
 
               <div style="margin-bottom: 35px;">
-                <h5><strong>Options 2 - </strong>NPM Install:</h5>
+                <h5>
+                  <strong>Options 2 - </strong>NPM Install:</h5>
                 <pre class="sPre">                    $ npm install node-snackbar
-                  </pre>
+                          </pre>
               </div>
 
-              <h5><strong>Option 3 - </strong>Download <strong>CSS</strong> and <strong>Javascript</strong> Files:</h5>
+              <h5>
+                <strong>Option 3 - </strong>Download
+                <strong>CSS</strong> and
+                <strong>Javascript</strong> Files:</h5>
               <a href="https://github.com/polonel/snackbar/archive/master.zip" class="waves-effect waves-light btn btn-full">Download Files</a>
             </div>
           </div>
@@ -130,18 +151,20 @@
                 1. Reference the Snackbar javascript and CSS files:
               </p>
               <pre style="white-space: pre-line !important;" class=" language-html">                  <code class=" language-html">
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dist/snackbar.min.css<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dist/snackbar.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
-                  </code>
-                </pre>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dist/snackbar.min.css<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dist/snackbar.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+                        </code>
+                      </pre>
               <p class="text-left">
-                2. Call the <strong>show()</strong> function on the <strong>Snackbar</strong> object when you wish to display a notification.
+                2. Call the
+                <strong>show()</strong> function on the
+                <strong>Snackbar</strong> object when you wish to display a notification.
               </p>
               <pre class=" language-javascript">                  <code style="white-space: pre-line !important;" class=" language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.button'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                       Snackbar<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">{</span>text<span class="token punctuation">:</span> <span class="token string">'Example notification text.'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                  </code>
-                </pre>
+                           Snackbar<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">{</span>text<span class="token punctuation">:</span> <span class="token string">'Example notification text.'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                      </code>
+                    </pre>
             </div>
             <hr style="width: 100%">
           </div>
@@ -164,57 +187,82 @@
                 <tbody tabindex="0" style="overflow: hidden; outline: none;">
                   <tr>
                     <td>text</td>
-                    <td><i>null</i></td>
+                    <td>
+                      <i>null</i>
+                    </td>
                     <td>The text to displae inside the notification.</td>
                   </tr>
                   <tr>
                     <td>textColor</td>
-                    <td><i>#FFFFFF</i></td>
-                    <td>Text color of the notification text. <i>Default is white.</i></td>
+                    <td>
+                      <i>#FFFFFF</i>
+                    </td>
+                    <td>Text color of the notification text.
+                      <i>Default is white.</i>
+                    </td>
                   </tr>
                   <tr>
                     <td>pos</td>
-                    <td><i>bottom-left</i></td>
+                    <td>
+                      <i>bottom-left</i>
+                    </td>
                     <td>The position the notification will show. Refer to the examples above for possible positions.</td>
                   </tr>
                   <tr>
                     <td>customClass</td>
-                    <td><i>null</i></td>
+                    <td>
+                      <i>null</i>
+                    </td>
                     <td>Add a custom class to the notification for custom styling.</td>
                   </tr>
                   <tr>
                     <td>width</td>
-                    <td><i>auto</i></td>
-                    <td>Width of the notification. Used to <i>shrink/expand</i> window as you wish.</td>
+                    <td>
+                      <i>auto</i>
+                    </td>
+                    <td>Width of the notification. Used to
+                      <i>shrink/expand</i> window as you wish.</td>
                   </tr>
                   <tr>
                     <td>showAction</td>
-                    <td><i>true</i></td>
+                    <td>
+                      <i>true</i>
+                    </td>
                     <td>Boolean to show the action buton or not.</td>
                   </tr>
                   <tr>
                     <td>actionText</td>
-                    <td><i>Dismiss</i></td>
+                    <td>
+                      <i>Dismiss</i>
+                    </td>
                     <td>Text to display as the action button.</td>
                   </tr>
                   <tr>
                     <td>actionTextColor</td>
-                    <td><i>#4CAF50</i></td>
+                    <td>
+                      <i>#4CAF50</i>
+                    </td>
                     <td>Text color of the action button.</td>
                   </tr>
                   <tr>
                     <td>backgroundColor</td>
-                    <td><i>#323232</i></td>
+                    <td>
+                      <i>#323232</i>
+                    </td>
                     <td>Background color of the notification window.</td>
                   </tr>
                   <tr>
                     <td>duration</td>
-                    <td><i>5000</i></td>
+                    <td>
+                      <i>5000</i>
+                    </td>
                     <td>Time in milliseconds the notification is displayed before fading out.</td>
                   </tr>
                   <tr>
                     <td>onActionClick</td>
-                    <td><i>dismiss function</i></td>
+                    <td>
+                      <i>dismiss function</i>
+                    </td>
                     <td>Default action closes the notification. A function with the notification element as the argument.</td>
                   </tr>
                 </tbody>
@@ -245,31 +293,12 @@
     </div>
   </div>
 
-  <script>
-    (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r;
-      i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date();
-      a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
-      m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-7509585-1', 'auto');
-    ga('send', 'pageview');
-  </script>
   <script src="./src/modernizr.js" charset="utf-8"></script>
   <script src="./src/jquery-2.2.0.min.js" charset="utf-8"></script>
   <script src="./src/materialize.min.js" charset="utf-8"></script>
-  <script src="./src/jquery.nicescroll.min.js" charset="utf-8"></script>
   <script src="./src/prism.js" charset="utf-8"></script>
-
   <script src="./src/snackbar.min.js" charset="utf-8"></script>
   <script src="./src/init.js" charset="utf-8"></script>
+</body>
 
-
-
-<div class="hiddendiv common"></div><div id="ascrail2000" class="nicescroll-rails nicescroll-rails-vr" style="width: 5px; z-index: 9999; cursor: default; position: fixed; top: 0px; height: 100%; right: 0px; display: block; opacity: 0;"><div class="nicescroll-cursors" style="position: relative; top: 0px; float: right; width: 5px; height: 241px; background-color: rgb(50, 50, 50); border: rgb(50, 50, 50); background-clip: padding-box; border-radius: 5px;"></div></div><div id="ascrail2000-hr" class="nicescroll-rails nicescroll-rails-hr" style="height: 5px; z-index: 9999; position: fixed; left: 0px; width: 100%; bottom: 0px; cursor: default; display: none; opacity: 0;"><div class="nicescroll-cursors" style="position: absolute; top: 0px; height: 5px; width: 1440px; background-color: rgb(50, 50, 50); border: rgb(50, 50, 50); background-clip: padding-box; border-radius: 5px;"></div></div><div id="ascrail2001" class="nicescroll-rails nicescroll-rails-vr" style="width: 5px; z-index: 9999; cursor: default; position: absolute; top: 2013.89px; left: 1103.98px; height: 506px; display: none; opacity: 0;"><div class="nicescroll-cursors" style="position: relative; top: 0px; float: right; width: 5px; height: 0px; background-color: rgb(225, 212, 222); border: rgb(225, 212, 222); background-clip: padding-box; border-radius: 5px;"></div></div><div id="ascrail2001-hr" class="nicescroll-rails nicescroll-rails-hr" style="height: 5px; z-index: 9999; top: 2514.89px; left: 329.984px; position: absolute; cursor: default; display: none; opacity: 0;"><div class="nicescroll-cursors" style="position: absolute; top: 0px; height: 5px; width: 0px; background-color: rgb(225, 212, 222); border: rgb(225, 212, 222); background-clip: padding-box; border-radius: 5px; left: 0px;"></div></div></body></html>
+</html>
