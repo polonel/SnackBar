@@ -12,8 +12,8 @@
   color: white;
   line-height: 22px;
   padding: 18px 24px;
-  bottom: 0;
-  top: 0;
+  bottom: -100px;
+  top: -100px;
   opacity: 0;
   z-index: 9999; }
   .snackbar-container .action {
@@ -34,19 +34,19 @@
     max-width: 568px;
     display: inline-flex;
     border-radius: 2px;
-    margin: 24px;
-    bottom: -100px; } }
+    margin: 24px; } }
 
 @media (max-width: 640px) {
   .snackbar-container {
     left: 0;
-    right: 0; } }
+    right: 0;
+    width: 100%; } }
 
 .snackbar-pos.bottom-center {
   top: auto !important;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, 0); }
 
 .snackbar-pos.bottom-left {
   top: auto !important;
@@ -67,9 +67,14 @@
   bottom: auto !important;
   top: 0;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, 0); }
 
 .snackbar-pos.top-right {
   bottom: auto !important;
   top: 0;
   right: 0; }
+
+@media (max-width: 640px) {
+  .snackbar-pos.bottom-center, .snackbar-pos.top-center {
+    left: 0;
+    transform: none; } }
