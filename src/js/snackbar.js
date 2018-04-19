@@ -1,8 +1,8 @@
 /*!
- * Snackbar v0.1.9
+ * Snackbar v0.1.10
  * http://polonel.com/Snackbar
  *
- * Copyright 2017 Chris Brame and other contributors
+ * Copyright 2018 Chris Brame and other contributors
  * Released under the MIT license
  * https://github.com/polonel/Snackbar/blob/master/LICENSE
  */
@@ -40,7 +40,8 @@
         onActionClick: function(element) {
             element.style.opacity = 0;
         },
-        onSecondButtonClick: function(element) {}
+        onSecondButtonClick: function(element) {},
+        onClose: function(element) {}
     };
 
     Snackbar.show = function($options) {
@@ -100,7 +101,7 @@
                 function() {
                     if (Snackbar.current === this) {
                         Snackbar.current.style.opacity = 0;
-                        // When natural remove event ocurs let's move the snackbar to its origins
+                        // When natural remove event occurs let's move the snackbar to its origins
                         Snackbar.current.style.top = '-100px';
                         Snackbar.current.style.bottom = '-100px';
                     }
@@ -113,6 +114,9 @@
             'transitionend',
             function(event, elapsed) {
                 if (event.propertyName === 'opacity' && this.style.opacity === '0') {
+                    if (typeof(options.onClose) === 'function')
+                        options.onClose(this);
+
                     this.parentElement.removeChild(this);
                     if (Snackbar.current === this) {
                         Snackbar.current = null;
