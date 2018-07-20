@@ -1,5 +1,5 @@
 /*!
- * Snackbar v0.1.10
+ * Snackbar v0.1.11
  * http://polonel.com/Snackbar
  *
  * Copyright 2018 Chris Brame and other contributors
@@ -158,7 +158,7 @@
             for (var prop in obj) {
                 if (Object.prototype.hasOwnProperty.call(obj, prop)) {
                     if (deep && Object.prototype.toString.call(obj[prop]) === '[object Object]') {
-                        extended[prop] = extend(true, extended[prop], obj[prop]);
+                        extended[prop] = Extend(true, extended[prop], obj[prop]);
                     } else {
                         extended[prop] = obj[prop];
                     }
