@@ -1,5 +1,5 @@
 /*!
- * Snackbar v0.1.11
+ * Snackbar v0.1.13
  * http://polonel.com/Snackbar
  *
  * Copyright 2018 Chris Brame and other contributors
@@ -29,11 +29,11 @@
         width: 'auto',
         showAction: true,
         actionText: 'Dismiss',
-        actionTextAria:'Dismiss, Description for Screen Readers',
+        actionTextAria: 'Dismiss, Description for Screen Readers',
         actionTextColor: '#4CAF50',
         showSecondButton: false,
         secondButtonText: '',
-        secondButtonAria:'Description for Screen Readers',
+        secondButtonAria: 'Description for Screen Readers',
         secondButtonTextColor: '#4CAF50',
         backgroundColor: '#323232',
         pos: 'bottom-left',
@@ -92,7 +92,7 @@
             var actionButton = document.createElement('button');
             actionButton.className = 'action';
             actionButton.innerHTML = options.actionText;
-            actionButton.setAttribute('aria-label',options.actionTextAria)
+            actionButton.setAttribute('aria-label', options.actionTextAria);
             actionButton.style.color = options.actionTextColor;
             actionButton.addEventListener('click', function() {
                 options.onActionClick(Snackbar.snackbar);
