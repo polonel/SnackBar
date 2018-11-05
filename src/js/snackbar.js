@@ -80,8 +80,7 @@
             var secondButton = document.createElement('button');
             secondButton.className = 'action';
             secondButton.innerHTML = options.secondButtonText;
-            secondButton.innerHTML = options.secondButtonAria;
-            secondButton.setAttribute('aria-label', secondButtonAria);
+            secondButton.setAttribute('aria-label', options.secondButtonAria)
             secondButton.style.color = options.secondButtonTextColor;
             secondButton.addEventListener('click', function() {
                 options.onSecondButtonClick(Snackbar.snackbar);
