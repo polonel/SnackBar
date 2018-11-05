@@ -1,5 +1,5 @@
 /*!
- * Snackbar v0.1.12
+ * Snackbar v0.1.14
  * http://polonel.com/Snackbar
  *
  * Copyright 2018 Chris Brame and other contributors
@@ -80,8 +80,7 @@
             var secondButton = document.createElement('button');
             secondButton.className = 'action';
             secondButton.innerHTML = options.secondButtonText;
-            secondButton.innerHTML = options.secondButtonAria;
-            secondButton.setAttribute('aria-label', secondButtonAria);
+            secondButton.setAttribute('aria-label', options.secondButtonAria);
             secondButton.style.color = options.secondButtonTextColor;
             secondButton.addEventListener('click', function() {
                 options.onSecondButtonClick(Snackbar.snackbar);
