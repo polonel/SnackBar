@@ -1,6 +1,6 @@
 {
   "name": "node-snackbar",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "Notifications inspired by Google Material Design",
   "main": "src/js/snackbar.js",
   "types": "index.d.ts",
