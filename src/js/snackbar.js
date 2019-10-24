@@ -30,6 +30,7 @@
         showAction: true,
         actionText: 'Dismiss',
         actionTextAria: 'Dismiss, Description for Screen Readers',
+        alertScreenReader: false,
         actionTextColor: '#4CAF50',
         showSecondButton: false,
         secondButtonText: '',
@@ -112,6 +113,10 @@
                 }.bind(Snackbar.snackbar),
                 options.duration
             );
+        }
+
+        if (options.alertScreenReader) {
+           Snackbar.snackbar.setAttribute('role', 'alert');
         }
 
         Snackbar.snackbar.addEventListener(
