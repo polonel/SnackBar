@@ -101,7 +101,7 @@
             Snackbar.snackbar.appendChild(actionButton);
         }
 
-        if (options.duration) {
+        if (options.duration && options.duration != -1) {
             setTimeout(
                 function() {
                     if (Snackbar.current === this) {
